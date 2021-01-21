@@ -1,0 +1,32 @@
+<div>
+    <span>Counter</span>
+    <script>
+
+        var result = (function () {
+            var a = 1;
+            return {
+                sayA: function () {
+                    return a++;
+                }
+            };
+        })();
+
+    </script>
+
+    <span>Double Counter</span>
+    <script>
+
+        function createCounter() {
+            var a = 1;
+            return {
+                sayA: function () {
+                    return a++;
+                }
+            };
+        };
+
+        var counter1 = createCounter();
+        var counter2 = createCounter();
+
+    </script>
+</div>
