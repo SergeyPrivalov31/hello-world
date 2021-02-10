@@ -1,0 +1,44 @@
+<script>
+const countOfWorkout = 500;
+const RestOfWorkout = 500;
+
+function workout(count){
+    return new Promise((resolve, reject) => {
+        if(count > 100){
+            reject(new Error("It is so difficult"));
+        }
+        setTimeout(() => {
+            resolve()
+        },count * TimeOfWorkout)
+    });
+    
+};
+
+function rest(time){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve()
+        }, time * RestOfWorkout)
+    })
+}
+
+
+
+
+
+
+//ex1
+console.log("start workout")
+
+workout(10)
+.then(() => {
+    console.log('workout comlete with 5 seconds. now REST');
+    return rest(11)
+    .then(() => {
+    console.log('Rest was out, get start the workout =)')
+    }).catch(() => {
+        consloe.log('no nonono!!!')
+    })
+} )
+
+</script> 
