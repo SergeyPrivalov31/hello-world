@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//1 ответ: 13 13
+		function test() {
+			a = 10;
+			console.log(1 + c);
+		}
+		c = 5;
+		var c = 3;
+		a = 12;
+
+		test();
+		console.log(a + c);
+
+		//2 ответ: 1  undefined
+		if (true) {
+			function test() {
+				console.log(1);
+			}
+		} else {
+			function test() {
+				console.log(2);
+			}
+		}
+		test();
+
+		//3 ответ: 1  undefined
+		if (true) {
+			test = function () {
+				console.log(1);
+			}
+		} else {
+			test = function () {
+				console.log(2);
+			}
+		}
+		test();
+
+		//4 Что будет находиться в this выведено в консоль? ответ: window obj
+		var fnTest = function () {
+			console.log(this);
+		}
+
+		var obj = { Prop: 1 };
+		obj.test = fnTest;
+
+		fnTest();
+		obj.test();
+
+		//5 Как передать контекст в функцию или метод объекта? ответ: bind call apply
+
+		//6 ответ: 0120
+		function Count() {
+			var counter = 0;
+			return function () {
+				console.log(counter++);
+			}
+		}
+
+		var c = new Count();
+
+		c();
+		c();
+
+		c.counter = 0;
+
+		c();
+
+		var b = new Count();
+		b();
+	</script>
+
+	<style type="text/css">
+		//7 Отсортируйте селекторы по скорости работы
+
+		//8 Какого цвета будет надпись? ответ: синий
+		.tSpan {
+			color: green;
+		}
+
+		span {
+			color: yellow;
+		}
+
+		div span {
+			color: red;
+		}
+
+		.tDiv .tSpan {
+			color: blue;
+		}
+	</style>
+
+	<div class="tDiv">
+		<span class="tSpan">test</span>
+	</div>
+
+	<script>
+		//9 Через какое время в консоли выведится 'done'? ответ: 5 сек (не понял как так?)
+		var i; var foo;
+		i = 0;
+		function foo() {
+			i++;
+			if (i < 100) {
+				setTimeout(foo, i);
+			} else {
+				console.log('done');
+			}
+		}
+		foo();
+
+		//10 Что выведется в консоль и почему? ответ: cannot read property showAge of undefined
+		var age = 15;
+		function Cat(age) {
+			this.age = age;
+		}
+		Cat.prototipe.showAge = function () {
+			console.log(this.age);
+		}
+
+		var Murka = new Cat(10);
+		Murka.showAge.call(this);
+
+		//11 Сделайте возможность такой записи 'Hello'.add('world').add('!');
+
+
+		//12 Что будет находиться в this?
+		var a = [1, 2, 3, 4];
+
+		a.forEach(function (x) {
+			this.b = this.b || [];
+			console.log(this.b.push(x + 5));
+		})
+		//13 Что будет выведено в консоль и через сколько?
+		for (var i = 0; i < 10; i++) {
+			setTimeout(() => {
+				console.log(i)
+			}, 1000);
+		}
+	</script>
+</body>
+
+</html>
