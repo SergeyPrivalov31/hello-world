@@ -1,0 +1,30 @@
+<div>
+	<span>Counter</span>
+	<script>
+
+		var result = (() => {
+			var a = 1;
+			return {
+				sayA: (() => {
+					return a++;
+				})
+			};
+		})();
+	</script>
+
+	<script>
+
+		var createCounter = () => {
+			var a = 1;
+			return {
+				sayA: (() => {
+					return a++;
+				})
+			};
+		};
+
+		var firstCounter = createCounter();
+		var secondCounter = createCounter();
+	</script>
+
+</div>
