@@ -1,0 +1,129 @@
+<!-- <script type="text/javascript">
+	
+
+	runUfterTime(3)
+	.then (()=>{console.log("Привет!")})
+	.then (()=>{
+		setTimeout(()=>{
+			console.log("Подождали немного =)")
+		}, 2000)
+	})
+	.then (()=>{
+		setTimeout(()=>{
+			console.log("ИИИИиии... =)")
+		}, 4000)
+	})
+	.then (()=>{
+		setTimeout(()=>{
+			console.log("Пока!")
+		}, 6000)
+	})
+	
+
+	function runUfterTime(seconds){
+		let promise = new Promise((resolve, reject) => {
+			setTimeout(()=>{
+				resolve()
+				console.log("Я промис, я ЗАresolveЛСЯ")
+			}, seconds * 1000)
+		})
+		return promise
+	}
+	
+</script> -->
+
+<!-- <script type="text/javascript">
+	
+startUfterPromise(3)
+	.then(() => {
+		setTimeout(() => {
+			console.log("Resolved Hi Hi!!!")
+		},1000)
+	})
+
+function startUfterPromise(seconds){
+	let promise = new Promise ((resolve, reject) => {
+		setTimeout(()=> {
+			resolve()
+			console.log("Привет, я только что вернул Промис, теперь можно использовать .then")
+		}, seconds * 1000)
+	})
+	return promise
+}
+
+</script> -->
+
+
+<!-- 
+<script type="text/javascript">
+
+
+
+
+	doItAfter(3)
+	.then(()=> {
+		setTimeout(()=>{
+			console.log("Привет Гупик!!!")
+		}, 1000)
+	})
+
+	function doItAfter(seconds){
+		let promise = new Promise ((resolve, reject) => {
+			setTimeout(()=>{
+				resolve()
+				console.log("Я обещал и сделал!!!")
+			}, seconds * 1000)
+		})
+		return promise
+	}
+
+
+
+
+</script> -->
+
+<script type="text/javascript">
+	
+	/*goAfterPromiseResolve(3)
+	.then(()=>{
+		setTimeout(()=>{
+			console.log("Я запускаюсь после того, как Промис resolved")
+		}, 3000)
+	})
+
+	function goAfterPromiseResolve(seconds){
+		let promise = new Promise ((resolve, reject) => {
+			setTimeout(()=>{
+				resolve()
+				console.log("Я промис и я выполнил обещание")	
+			}, seconds * 1000)
+		})
+
+		return promise
+	}
+	*/
+
+//Цепочка промисов
+
+new Promise(function(resolve, reject){
+	setTimeout(() => resolve(1),1000)
+}).then(function(result){
+	alert(result)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
